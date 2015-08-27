@@ -8,8 +8,8 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/admin/partials
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/admin/partials
  */
 ?>
 

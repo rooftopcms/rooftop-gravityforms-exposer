@@ -10,18 +10,18 @@
  *
  * @link              http://errorstudio.co.uk
  * @since             1.0.0
- * @package           Justified_Forms_Exposer
+ * @package           Rooftop_Forms_Exposer
  *
  * @wordpress-plugin
- * Plugin Name:       Justified Wordpress Forms Exposer
- * Plugin URI:        https://bitbucket.org/errorstudio/justified-forms-exposer
+ * Plugin Name:       Rooftop Gravityforms Exposer
+ * Plugin URI:        https://bitbucket.org/errorstudio/rooftop-gravityforms-exposer
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            Error
  * Author URI:        http://errorstudio.co.uk
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       justified-forms-exposer
+ * Text Domain:       rooftop-gravityforms-exposer
  * Domain Path:       /languages
  */
 
@@ -32,30 +32,30 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-justified-forms-exposer-activator.php
+ * This action is documented in includes/class-rooftop-gravityforms-exposer-activator.php
  */
-function activate_justified_forms_exposer() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-justified-forms-exposer-activator.php';
-	Justified_Forms_Exposer_Activator::activate();
+function activate_Rooftop_Forms_Exposer() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-rooftop-gravityforms-exposer-activator.php';
+	Rooftop_Forms_Exposer_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-justified-forms-exposer-deactivator.php
+ * This action is documented in includes/class-rooftop-gravityforms-exposer-deactivator.php
  */
-function deactivate_justified_forms_exposer() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-justified-forms-exposer-deactivator.php';
-	Justified_Forms_Exposer_Deactivator::deactivate();
+function deactivate_Rooftop_Forms_Exposer() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-rooftop-gravityforms-exposer-deactivator.php';
+	Rooftop_Forms_Exposer_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_justified_forms_exposer' );
-register_deactivation_hook( __FILE__, 'deactivate_justified_forms_exposer' );
+register_activation_hook( __FILE__, 'activate_Rooftop_Forms_Exposer' );
+register_deactivation_hook( __FILE__, 'deactivate_Rooftop_Forms_Exposer' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-justified-forms-exposer.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-rooftop-gravityforms-exposer.php';
 
 /**
  * Begins execution of the plugin.
@@ -66,10 +66,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-justified-forms-exposer.ph
  *
  * @since    1.0.0
  */
-function run_justified_forms_exposer() {
+function run_Rooftop_Forms_Exposer() {
 
-	$plugin = new Justified_Forms_Exposer();
+	$plugin = new Rooftop_Forms_Exposer();
 	$plugin->run();
 
 }
-run_justified_forms_exposer();
+run_Rooftop_Forms_Exposer();

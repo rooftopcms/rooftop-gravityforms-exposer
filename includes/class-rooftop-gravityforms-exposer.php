@@ -9,8 +9,8 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  * @author     Error <info@errorstudio.co.uk>
  */
-class Justified_Forms_Exposer {
+class Rooftop_Forms_Exposer {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Justified_Forms_Exposer {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Justified_Forms_Exposer_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Rooftop_Forms_Exposer_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -68,7 +68,7 @@ class Justified_Forms_Exposer {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'justified-forms-exposer';
+		$this->plugin_name = 'rooftop-gravityforms-exposer';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -83,10 +83,10 @@ class Justified_Forms_Exposer {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Justified_Forms_Exposer_Loader. Orchestrates the hooks of the plugin.
-	 * - Justified_Forms_Exposer_i18n. Defines internationalization functionality.
-	 * - Justified_Forms_Exposer_Admin. Defines all hooks for the admin area.
-	 * - Justified_Forms_Exposer_Public. Defines all hooks for the public side of the site.
+	 * - Rooftop_Forms_Exposer_Loader. Orchestrates the hooks of the plugin.
+	 * - Rooftop_Forms_Exposer_i18n. Defines internationalization functionality.
+	 * - Rooftop_Forms_Exposer_Admin. Defines all hooks for the admin area.
+	 * - Rooftop_Forms_Exposer_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -100,33 +100,33 @@ class Justified_Forms_Exposer {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-justified-forms-exposer-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rooftop-gravityforms-exposer-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-justified-forms-exposer-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rooftop-gravityforms-exposer-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-justified-forms-exposer-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-rooftop-gravityforms-exposer-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-justified-forms-exposer-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-rooftop-gravityforms-exposer-public.php';
 
-		$this->loader = new Justified_Forms_Exposer_Loader();
+		$this->loader = new Rooftop_Forms_Exposer_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Justified_Forms_Exposer_i18n class in order to set the domain and to register the hook
+	 * Uses the Rooftop_Forms_Exposer_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -134,7 +134,7 @@ class Justified_Forms_Exposer {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Justified_Forms_Exposer_i18n();
+		$plugin_i18n = new Rooftop_Forms_Exposer_i18n();
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
@@ -150,7 +150,7 @@ class Justified_Forms_Exposer {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Justified_Forms_Exposer_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Rooftop_Forms_Exposer_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -166,7 +166,7 @@ class Justified_Forms_Exposer {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Justified_Forms_Exposer_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Rooftop_Forms_Exposer_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -198,7 +198,7 @@ class Justified_Forms_Exposer {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Justified_Forms_Exposer_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Rooftop_Forms_Exposer_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

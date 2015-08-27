@@ -6,8 +6,8 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  * @author     Error <info@errorstudio.co.uk>
  */
-class Justified_Forms_Exposer_Deactivator {
+class Rooftop_Forms_Exposer_Deactivator {
 
 	/**
 	 * Short Description. (use period)

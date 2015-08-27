@@ -22,7 +22,7 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
+ * @package    Rooftop_Forms_Exposer
  */
 
 // If uninstall not called from WordPress, then exit.

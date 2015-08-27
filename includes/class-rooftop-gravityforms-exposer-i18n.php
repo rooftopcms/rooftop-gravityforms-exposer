@@ -9,8 +9,8 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  * @author     Error <info@errorstudio.co.uk>
  */
-class Justified_Forms_Exposer_i18n {
+class Rooftop_Forms_Exposer_i18n {
 
 	/**
 	 * The domain specified for this plugin.

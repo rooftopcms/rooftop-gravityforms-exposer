@@ -6,8 +6,8 @@
  * @link       http://errorstudio.co.uk
  * @since      1.0.0
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Justified_Forms_Exposer
- * @subpackage Justified_Forms_Exposer/includes
+ * @package    Rooftop_Forms_Exposer
+ * @subpackage Rooftop_Forms_Exposer/includes
  * @author     Error <info@errorstudio.co.uk>
  */
-class Justified_Forms_Exposer_Loader {
+class Rooftop_Forms_Exposer_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
