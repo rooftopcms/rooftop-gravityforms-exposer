@@ -110,7 +110,22 @@ class Rooftop_Forms_Exposer_Public {
      * then collect & cleanup the form object to include in our response
      *
      */
-    public function get_forms($data, $post, $request){
+    public function add_forms_to_response() {
+        $types = get_post_types(array(
+            'public' => true
+        ));
+        foreach($types as $key => $post_type) {
+            register_api_field($post_type, 'forms', array(
+                    'get_callback'    => array( $this, 'get_forms' ),
+                    'update_callback' => null,
+                    'schema'          => null,
+            ));
+        }
+
+    }
+    public function get_forms($object, $field, $request){
+        $post = get_post($object['id']);
+
         preg_match_all('/\[gravityform id="(\d+)"[^\]]+]/', $post->post_content, $form_matches);
 
         if(count($form_matches) && count($form_matches[1])) {
@@ -119,10 +134,8 @@ class Rooftop_Forms_Exposer_Public {
                 return $this->sanitise_form_object($form);
             }, $form_matches[1]);
 
-            $data->data['forms'] = $forms;
+            return $forms;
         }
-
-        return $data;
     }
 
     function sanitise_form_object(&$form){
