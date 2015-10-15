@@ -101,14 +101,13 @@ class Rooftop_Forms_Exposer_Public {
 	}
 
     /**
-     * @param $data
-     * @param $post
-     * @param $request
+     * @internal param $data
+     * @internal param $post
+     * @internal param $request
      * @return mixed
      *
      * Parse the post_content for gravity form shortcodes, collect the form ID's with a regex and
      * then collect & cleanup the form object to include in our response
-     *
      */
     public function add_forms_to_response() {
         $types = get_post_types(array(
@@ -123,6 +122,16 @@ class Rooftop_Forms_Exposer_Public {
         }
 
     }
+
+    /**
+     * @param $object
+     * @param $field
+     * @param $request
+     * @return array
+     *
+     * return all the forms associated with this post as the value to $field
+     *
+     */
     public function get_forms($object, $field, $request){
         $post = get_post($object['id']);
 
@@ -138,6 +147,12 @@ class Rooftop_Forms_Exposer_Public {
         }
     }
 
+    /**
+     * @param $form
+     * @return mixed
+     *
+     * remove un-needed fields from the form field object
+     */
     function sanitise_form_object(&$form){
         unset($form['version']);
         unset($form['useCurrentUserAsAuthor']);
