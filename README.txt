@@ -26,8 +26,8 @@ rooftop-gravityforms-exposer is a Composer plugin, so you can include it in your
 Otherwise you can install manually:
 
 1. Upload the `rooftop-gravityforms-exposer` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. There is no step 3 :-)
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. There is no step 3 :-)
 
 == Frequently Asked Questions ==
 
