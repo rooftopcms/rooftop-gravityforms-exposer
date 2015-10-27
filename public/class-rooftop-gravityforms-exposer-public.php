@@ -134,6 +134,7 @@ class Rooftop_Forms_Exposer_Public {
      */
     public function get_forms($object, $field, $request){
         $post = get_post($object['id']);
+        $forms = [];
 
         preg_match_all('/\[gravityform id="(\d+)"[^\]]+]/', $post->post_content, $form_matches);
 
@@ -142,9 +143,9 @@ class Rooftop_Forms_Exposer_Public {
                 $form = GFAPI::get_form($f);
                 return $this->sanitise_form_object($form);
             }, $form_matches[1]);
-
-            return $forms;
         }
+
+        return $forms;
     }
 
     /**
