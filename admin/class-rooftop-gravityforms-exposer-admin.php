@@ -100,4 +100,25 @@ class Rooftop_Forms_Exposer_Admin {
 
 	}
 
+    /**
+     * We dont do any rendering of gravityforms in WP so we remove the shortcode tags to maintain
+     * and replace it with our own callback which returns a <form> with data attributes (similar to how we handle internal site links)
+     */
+    public function remove_gravityforms_shortcodes() {
+        remove_shortcode('gravityform');
+        remove_shortcode('gravityforms');
+
+        add_shortcode('gravityform', array($this, 'parse_gravityforms_shortcode'));
+        add_shortcode('gravityforms', array($this, 'parse_gravityforms_shortcode'));
+    }
+
+    public function parse_gravityforms_shortcode($shortcode_config) {
+        $attributes = [];
+        foreach($shortcode_config as $key => $value) {
+            $attributes["data-$key"] = $value;
+        }
+
+        $form_data_attributes = http_build_query($attributes, 'x', ' ');
+        return "<form ${form_data_attributes}></form>";
+    }
 }
