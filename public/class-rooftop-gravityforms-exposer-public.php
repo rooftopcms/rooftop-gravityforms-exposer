@@ -113,8 +113,9 @@ class Rooftop_Forms_Exposer_Public {
         $types = get_post_types(array(
             'public' => true
         ));
+
         foreach($types as $key => $post_type) {
-            register_api_field($post_type, 'forms', array(
+            register_rest_field($post_type, 'forms', array(
                     'get_callback'    => array( $this, 'get_forms' ),
                     'update_callback' => null,
                     'schema'          => null,
