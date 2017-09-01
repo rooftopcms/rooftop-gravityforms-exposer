@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Rooftop Gravityforms ===
 Contributors: rooftopcms
 Tags: rooftop, api, headless, content, gravityforms
 Requires at least: 4.3
